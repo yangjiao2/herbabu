@@ -705,3 +705,7 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
 #footer-bottom p a {
   color: #4DBD33;
 }
+
+#nav-left{
+  float:left;
+}

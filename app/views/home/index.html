@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends '../layout.html' %}
 
 {% block header %}
 <section id="hero-area">
@@ -9,21 +9,21 @@
 {% block main %}
 
 <div class="block">
-    <h1 class="heading wow fadeInUp" data-wow-duration="300ms" data-wow-delay="300ms"> <span>Escolha</span> seu <span>prato</span></h1>
-    <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">Fácil, Rápido, Delicioso. </p>
+    <h1 class="heading wow fadeInUp" data-wow-duration="300ms" data-wow-delay="300ms"> <span>Tradition</span> and <span>Science</span></h1>
+    <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">We combine the time-tested wisdom of traditional herbal supplements with the knowledge gained from modern scientific studies of herbology to give you products that are safe and effective. With our tested and certified formulas, we want to help take your wellness to the next level. Enjoy the Gifts of Nature! </p>
     <div class="pricing-list">
         <ul>
-            {% for produto in produtos %}
+            {% for product in products %}
             <li class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="300ms">
                 <div class="item">
                     <div class="item-title">
-                        <h2>{{ produto.nome }}</h2>
+                        <h2>{{ product.name }}</h2>
                         <div class="border-bottom"></div>
-                        <span>R$ {{ produto.valor }}</span>
+                        <span>$ {{ product.price }}</span>
                     </div>
-                    <p>{{ produto.descricao }}</p>
+                    <p>{{ product.description }}</p>
                     <p>
-                        <a class="btn btn-default"  href="/produtos/{{ produto.id.toString() }}" role="button">Ver detalhes do Produto</a>
+                        <a class="btn btn-default"  href="/product/{{ produto.id.toString() }}" role="button">View Details</a>
                     </p>
                 </div>
             </li>

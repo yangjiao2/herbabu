@@ -5,7 +5,7 @@
  */
 
 const home = require('../app/controllers/home');
-
+const product = require('../app/controllers/product');
 /**
  * Expose
  */
@@ -13,6 +13,7 @@ const home = require('../app/controllers/home');
 module.exports = function (app, passport) {
 
   app.get('/', home.index);
+  app.get('/product', product.index);
 
   /**
    * Error handling

@@ -18,7 +18,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const config = require('./config');
-
+const AWS = require('aws-sdk');
 const models = join(__dirname, 'app/models');
 const port = process.env.PORT || 3000;
 

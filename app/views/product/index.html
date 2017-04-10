@@ -1,0 +1,25 @@
+{% extends '../layout.html' %}
+
+{% block header %}
+<section id="hero-area">
+    <img class="img-responsive" src="/static/images/header.jpg" alt="">
+</section>
+{% endblock %}
+
+{% block main %}
+        {% if user %}
+          <a href="/logout">Logout</a>
+        {% endif %}
+        <h1>Products</h1>
+        <a href="/produtos/">...</a>
+        <ul>
+            {% for produto in produtos %}
+              <li{% if loop.first %} class="first"{% endif %}>
+                {{ produto.nome }}
+                <a href="/produtos/{{produto._id.toString()}}"> Ver</a>
+                <a href="/produtos/{{produto._id.toString()}}/edit"> Editar</a>
+                <a href="/produtos/{{produto._id.toString()}}/delete"> Excluir</a>
+              </li>
+            {% endfor %}
+        </ul>
+{% endblock %}
