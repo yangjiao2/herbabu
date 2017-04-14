@@ -12,17 +12,27 @@ var Schema = mongoose.Schema;
  */
 
 var UserSchema = new Schema({
-  name: { type: String, default: '' },
+  firstname: { type: String, default: '' },
+  lastname: { type: String, default: '' },
   email: { type: String, default: '' },
   hashed_password: { type: String, default: '' },
-  salt: { type: String, default: '' }
+  gender: { type: String, enum: ['Female', 'Male',], default: 'Female' },
+  age: { type: Number},
+  updated: { type: Date, default: Date.now },
+  height: { type: Number},
+  weight: { type: Number},
+  card: [{ type: mongoose.Schema.Types.ObjectId,
+    ref: 'Card'}],
+  address: [{ type: mongoose.Schema.Types.ObjectId,
+    ref: 'UserInfo'}]
+
 });
 
 /**
  * User plugin
  */
 
-UserSchema.plugin(userPlugin, {});
+// UserSchema.plugin(userPlugin, {});
 
 /**
  * Add your
@@ -30,7 +40,11 @@ UserSchema.plugin(userPlugin, {});
  * - validations
  * - virtuals
  */
-
+UserSchema
+    .virtual('name')
+    .get(function () {
+      return this.firstname + ', ' + this.lastname;
+    });
 /**
  * Methods
  */

@@ -4,7 +4,7 @@
  */
 
 module.exports = {
-  db: 'mongodb://localhost/your_project_production',
+  db: 'mongodb://herbabumanager:herbabu@ds159050.mlab.com:59050/herbabu_db',
   facebook: {
     clientID: 'APP_ID',
     clientSecret: 'SECRET',

@@ -57,6 +57,7 @@ module.exports = function (app, passport) {
 
   // set views path and default layout
   app.engine('html', require('ejs').renderFile);
+  // app.engine('.html', require('ejs').__express);
   app.engine('html', swig.renderFile);
   app.set('view engine', 'html');
   app.set('views', config.root + '/app/views');
